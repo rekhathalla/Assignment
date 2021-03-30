@@ -59,17 +59,12 @@ public class AssignmentStepDef {
         driver.findElement(By.cssSelector("button.sc-TOsTZ.bcNAlW.sc-ksYbfQ.kAXbBV")).click();
     }
 
-    @Then("^online order page is displayed for \"([^\"]*)\" location$")
-    public void online_order_page_is_displayed_for_location(String arg1) throws Throwable {
-        Assert.assertEquals(driver.getTitle().toString(),"KFC");
-    }
-
-    @When("^user navigates to Box Meals menu item$")
+    @Given("^user navigates to Box Meals menu item$")
     public void user_navigates_to_Box_Meals_menu_item() throws Throwable {
         driver.findElement(By.cssSelector("h3.sc-jWojfa.bPDePC")).click();
     }
 
-    @When("^user adds \"([^\"]*)\" product to the basket$")
+    @Given("^user adds \"([^\"]*)\" product to the basket$")
     public void user_adds_product_to_the_basket(String product) throws Throwable {
         List<WebElement> allElements = driver.findElements(By.xpath("//span[contains(@class, 'sc-cvbbAY dwPYoS')]/h3"));
         Iterator<WebElement> iter = allElements.iterator();
@@ -91,7 +86,7 @@ public class AssignmentStepDef {
         headsUp.click();
     }
 
-    @Then("^when user adds to the order and views the order$")
+    @Given("^user adds to the order and views the order$")
     public void when_user_adds_to_the_order_and_views_the_order() throws Throwable {
         driver.findElement(By.xpath(("//button[contains(@label,'Add to my order')]"))).click();
         driver.findElement(By.xpath(("//button[contains(@label,'View Order')]"))).click();
